@@ -9,11 +9,11 @@ interface SavingsCardProps {
 
 export const SavingsCard = ({ title, icon, value }: SavingsCardProps) => {
   return (
-    <Card>
+    <Card sx={{ height: "100%" }}>
       <CardContent>
-        <Box sx={{ display: "flex", mb: 3 }}>
+        <Box sx={{ display: "flex", mb: 3, alignItems: "center" }}>
           {icon}
-          <Typography sx={{ ml: 2 }} variant="h6">
+          <Typography sx={{ ml: 2, fontWeight: 100 }} variant="h6">
             {title}
           </Typography>
         </Box>

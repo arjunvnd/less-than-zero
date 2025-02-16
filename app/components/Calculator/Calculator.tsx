@@ -14,6 +14,7 @@ import {
   Select,
   SelectChangeEvent,
   TextField,
+  useMediaQuery,
 } from "@mui/material";
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import { SavingsCard } from "./components";
@@ -23,6 +24,7 @@ import TodayIcon from "@mui/icons-material/Today";
 import FactoryIcon from "@mui/icons-material/Factory";
 import bg from "@/public/pexels-pixabay-356049.jpg";
 import { calculateElectricityBill } from "./utils/calculate";
+import { useTheme } from "@mui/material/styles";
 
 export enum Phase {
   Single = "single",
@@ -34,6 +36,8 @@ export function Calculator() {
     units: "",
     phase: Phase.Single,
   });
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
   const [billDetails, setBillDetails] = React.useState({
     billAmount: 0,
@@ -76,7 +80,7 @@ export function Calculator() {
 
   return (
     <Card
-      sx={{ minWidth: 275, py: 6, px: 3 }}
+      sx={{ minWidth: 275, py: 6, px: { md: 3, xs: 2 } }}
       style={{
         backgroundImage: `url(${bg.src})`,
         width: "100%",
@@ -87,7 +91,7 @@ export function Calculator() {
         boxShadow: "inset 0 0 0 1000px rgb(0 0 0 / 43%)",
       }}
     >
-      <CardContent>
+      <CardContent sx={{ px: { md: 3, xs: 0 } }}>
         <Grid2 container spacing={2}>
           <Grid2
             size={{
@@ -167,28 +171,34 @@ export function Calculator() {
                 <SavingsCard
                   title="Bill Amount"
                   value={billDetails.billAmount}
-                  icon={<CurrencyRupeeIcon fontSize="large" />}
+                  icon={
+                    <CurrencyRupeeIcon
+                      fontSize={matches ? "large" : "medium"}
+                    />
+                  }
                 />
               </Grid2>
               <Grid2 size={{ xs: 6 }}>
                 <SavingsCard
                   title="Panels Required"
                   value={billDetails.panelsRequired}
-                  icon={<SolarPowerIcon fontSize="large" />}
+                  icon={
+                    <SolarPowerIcon fontSize={matches ? "large" : "medium"} />
+                  }
                 />
               </Grid2>
               <Grid2 size={{ xs: 6 }}>
                 <SavingsCard
                   title="Daily Production"
                   value={billDetails.dailyProduction}
-                  icon={<TodayIcon fontSize="large" />}
+                  icon={<TodayIcon fontSize={matches ? "large" : "medium"} />}
                 />
               </Grid2>
               <Grid2 size={{ xs: 6 }}>
                 <SavingsCard
                   title="Panel Capacity"
                   value={billDetails.panelCapacity}
-                  icon={<FactoryIcon fontSize="large" />}
+                  icon={<FactoryIcon fontSize={matches ? "large" : "medium"} />}
                 />
               </Grid2>
             </Grid2>

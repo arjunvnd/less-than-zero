@@ -1,5 +1,11 @@
+const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
-  basePath: "/less-than-zero",
+  reactStrictMode: true,
+  images: {
+    unoptimized: true, // Disable default image optimization
+  },
+  assetPrefix: isProd ? "/less-than-zero/" : "",
+  basePath: isProd ? "/less-than-zero" : "",
   output: "export",
 };
 

@@ -7,7 +7,7 @@ import { Grid2, TextField } from "@mui/material";
 
 export function ContactUs() {
   return (
-    <Grid2 container>
+    <Grid2 container sx={{ px: 4 }}>
       <Grid2 size={{ xs: 12, md: 6 }}>
         <Typography sx={{ mb: { xs: 2 } }} variant="h3">
           Something can go here
