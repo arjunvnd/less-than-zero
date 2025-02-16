@@ -14,12 +14,7 @@ export function Header() {
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
-          <Image
-            src={Logo}
-            width={32}
-            height={32}
-            alt="Picture of the author"
-          />
+          <Image src={Logo} width={32} height={32} alt="Less than zero Logo" />
           <Typography
             variant="h6"
             component="h1"
