@@ -123,3 +123,23 @@ export function calculateElectricityBill(units: string, phase: Phase) {
     solarDetails,
   };
 }
+
+const feild = {
+  name: "entry.193734899",
+  email: "entry.113074616",
+  typeOfBuilding: "entry.63544061",
+  ownedOrRented: "entry.294174387",
+  billDuration: "entry.236568233",
+  billAmount: "entry.109457986",
+  lastBillAmount: "entry.1008318670",
+  unitsConsumedInOneCycle: "entry.232192938",
+  uploadYourLatestBill: "entry.2049971824",
+  lessThanZero: "entry.269434138",
+  scheduleCall: "entry.1893777474",
+  phoneNumber: "entry.955030013",
+  year: "entry.1490090909_year",
+  month: "entry.1490090909_month",
+  day: "entry.1490090909_day",
+  hours: "entry.1490090909_hour",
+  minute: "entry.1490090909_minute",
+};
