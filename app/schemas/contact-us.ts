@@ -1,6 +1,8 @@
 import { z } from "zod";
 
-const phoneNumberRegex = new RegExp(/\d{5}([- ]*)\d{6}/);
+const phoneNumberRegex = new RegExp(
+  /^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/
+);
 
 export const contactSchema = z.object({
   userName: z

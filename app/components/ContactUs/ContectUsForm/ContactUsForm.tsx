@@ -89,6 +89,9 @@ export function ContactUsForm() {
                 inputLabel: {
                   shrink: true,
                 },
+                htmlInput: {
+                  maxLength: 12,
+                },
               }}
               placeholder="Enter your phone number"
             />
@@ -105,7 +108,11 @@ export function ContactUsForm() {
                 inputLabel: {
                   shrink: true,
                 },
+                htmlInput: {
+                  min: 0,
+                },
               }}
+              type="number"
               placeholder="Enter your average monthly bill"
             />
           </Grid2>
