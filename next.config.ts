@@ -1,12 +1,9 @@
-const isProd = process.env.NODE_ENV === "production";
+/** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Uncomment the following line to build a static site.
+  // output: "export",
+
   reactStrictMode: true,
-  images: {
-    unoptimized: true, // Disable default image optimization
-  },
-  assetPrefix: isProd ? "/less-than-zero/" : "",
-  basePath: isProd ? "/less-than-zero" : "",
-  output: "export",
 };
 
 export default nextConfig;
