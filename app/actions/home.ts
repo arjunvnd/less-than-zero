@@ -1,5 +1,6 @@
 "use server";
 
+import dayjs from "dayjs";
 import { contactSchema } from "../schemas/contact-us";
 
 interface ContactUsInput {
@@ -48,12 +49,13 @@ export const contactUs = async (
   const parsed = contactSchema.safeParse(userFormData);
   const fields: Record<string, string> = {};
 
+  for (const key of Object.keys(userFormData)) {
+    fields[key] = userFormData[key].toString();
+  }
+
   if (!parsed.success) {
     const errors = parsed.error.flatten().fieldErrors;
 
-    for (const key of Object.keys(userFormData)) {
-      fields[key] = userFormData[key].toString();
-    }
     return {
       success: false,
       fields,
@@ -65,7 +67,14 @@ export const contactUs = async (
 
   for (const [key, value] of formData.entries()) {
     if (key in entryId) {
-      userData[entryId[key as keyof ContactUsInput]] = value as string;
+      if (key === "callMeAt" && value) {
+        const date = dayjs(value as string);
+        const formattedDate = date.format("YYYY-MM-DD+HH:mm");
+        userData[entryId[key as keyof ContactUsInput]] =
+          formattedDate as string;
+      } else {
+        userData[entryId[key as keyof ContactUsInput]] = value as string;
+      }
     }
   }
 

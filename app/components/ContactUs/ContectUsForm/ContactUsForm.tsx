@@ -9,18 +9,22 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-// import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+import { DateTimeField } from "@mui/x-date-pickers/DateTimeField";
+
 import SnackBarAlert from "../../SnackBarAlert/SnackBarAlert";
+import { Dayjs } from "dayjs";
 
 export function ContactUsForm() {
   const [showSnackBar, setShowSnackBar] = useState(false);
   const [formState, contactUsAction] = useActionState(contactUs, {
     success: false,
   });
+  const [callMeAt, setCallMeAt] = useState<Dayjs | null>(null); // State to manage date field
 
   useEffect(() => {
     if (formState.success) {
       setShowSnackBar(true);
+      setCallMeAt(null); // Reset the DateTimeField after successful submission
     } else if (!formState.success && formState.serverError) {
       setShowSnackBar(true);
     }
@@ -116,8 +120,10 @@ export function ContactUsForm() {
               placeholder="Enter your average monthly bill"
             />
           </Grid2>
-          {/* <Grid2 size={12} mb={2}>
-            <DateTimePicker
+          <Grid2 size={12} mb={2}>
+            <DateTimeField
+              format="DD-MM-YYYY hh:mm a"
+              clearable
               label="When can we contact you"
               sx={{ flex: 1, width: "100%" }}
               name="callMeAt"
@@ -132,9 +138,11 @@ export function ContactUsForm() {
                   },
                 },
               }}
-              defaultValue={formState?.fields?.callMeAt}
+              value={callMeAt}
+              onChange={(newValue) => setCallMeAt(newValue)} // Set the new value to state
+              helperText="Example 21-05-2025 12:30 pm"
             />
-          </Grid2> */}
+          </Grid2>
           <Grid2 size={12} sx={{ mt: 1 }}>
             <Button fullWidth size="large" variant="contained" type="submit">
               Contact Us

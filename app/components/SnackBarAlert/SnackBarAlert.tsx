@@ -28,7 +28,7 @@ export default function SnackBarAlert({
 
   return (
     <div>
-      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
         <Alert
           onClose={handleClose}
           severity={severity}
