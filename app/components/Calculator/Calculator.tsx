@@ -90,6 +90,7 @@ export function Calculator() {
         backgroundPosition: "center",
         boxShadow: "inset 0 0 0 1000px rgb(0 0 0 / 43%)",
       }}
+      id="calculator"
     >
       <CardContent sx={{ px: { md: 3, xs: 0 } }}>
         <Grid2 container spacing={2}>

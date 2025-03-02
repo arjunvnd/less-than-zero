@@ -1,4 +1,4 @@
-import { Grid2, Typography } from "@mui/material";
+import { Box, Grid2, Typography } from "@mui/material";
 import PostCard from "./post-card";
 import { Image, Slug, PortableTextBlock } from "sanity";
 import { getPostForHomePageListing } from "@/sanity/utils/queries";
@@ -14,11 +14,15 @@ export default async function PostList() {
   const postdata: SanitPostsList[] = await getPostForHomePageListing();
 
   return (
-    <>
-      <Typography align="center" variant="h4">
+    <Box
+      sx={{
+        mt: 4,
+      }}
+    >
+      <Typography gutterBottom align="center" variant="h4">
         Frequently Asked Questions
       </Typography>
-      <Grid2 container gap={2} sx={{ px: 4 }} alignItems="stretch">
+      <Grid2 container gap={2} sx={{ px: 4, py: 8 }} alignItems="stretch">
         {postdata.map((post) => {
           return (
             <Grid2 size={{ md: 4 }} key={post.slug.current}>
@@ -27,6 +31,6 @@ export default async function PostList() {
           );
         })}
       </Grid2>
-    </>
+    </Box>
   );
 }

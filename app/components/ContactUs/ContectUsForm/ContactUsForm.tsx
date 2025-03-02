@@ -36,11 +36,6 @@ export function ContactUsForm() {
         <Typography variant="h5" component="div" gutterBottom align="center">
           Contact Us
         </Typography>
-        <Typography component="div" mb={3} align="center">
-          Contact us today to receive your first three quotes without any cost.
-          Don&apos;t miss out on this exclusive offer, reach out now and take
-          advantage of our free quote service!
-        </Typography>
         <Grid2 container>
           <Grid2 size={12} mb={2}>
             <TextField

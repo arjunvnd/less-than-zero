@@ -5,7 +5,7 @@ import { ContactUsForm } from "./ContectUsForm";
 
 export function ContactUs() {
   return (
-    <Grid2 container sx={{ px: 4 }} justifyContent="center">
+    <Grid2 id="contact-us" container sx={{ px: 4 }} justifyContent="center">
       <Grid2 size={{ xs: 12, sm: 12, md: 8 }}>
         <Card>
           <ContactUsForm />
