@@ -1,7 +1,7 @@
 "use client";
 
-import { Box, Grid2, Typography, useTheme } from "@mui/material";
-import { ContactUs } from "../ContactUs";
+import { Grid2, Typography, useTheme } from "@mui/material";
+// import { ContactUs } from "../ContactUs";
 
 export default function Footer() {
   const {
