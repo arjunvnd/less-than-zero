@@ -1,7 +1,7 @@
 "use client";
 import { Roboto } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
-import { amber, blue, green, purple } from "@mui/material/colors";
+import { amber, blue } from "@mui/material/colors";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
