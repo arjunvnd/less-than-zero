@@ -1,4 +1,3 @@
-"use client";
 import { Button, Paper, Stack, TextField } from "@mui/material";
 
 export default function LoginForm() {
@@ -12,6 +11,7 @@ export default function LoginForm() {
             }}
             name="email"
             placeholder="Email/Username"
+            label="Email/Username"
           />
           <TextField
             sx={{
@@ -19,6 +19,8 @@ export default function LoginForm() {
             }}
             name="password"
             placeholder="Password"
+            label="Password"
+            type="password"
           />
           <Button
             sx={{

@@ -12,6 +12,9 @@ export default function Login() {
       alignItems="center"
       flexDirection="column"
     >
+      <Typography className="!font-bold" gutterBottom variant="h6">
+        Less Than Zero
+      </Typography>
       <Typography gutterBottom variant="h4">
         Admin Login
       </Typography>
