@@ -34,7 +34,7 @@ export default function RootLayout({
           <StyledRoot>
             <CssBaseline />
             <Header />
-            <div>
+            <div className="app-container">
               <Toolbar />
               {children}
             </div>
