@@ -14,6 +14,9 @@ const paths = {
   adminDashboard() {
     return `/admin/dashboard`;
   },
+  assignVendorToUser(userId: string) {
+    return `/admin/user/${userId}/assign-vendor`;
+  },
 };
 
 export default paths;
