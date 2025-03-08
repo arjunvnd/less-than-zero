@@ -4,7 +4,9 @@ import { Typography } from "@mui/material";
 export default function VendorPage() {
   return (
     <>
-      <Typography variant="h5">Vendor Management</Typography>
+      <Typography gutterBottom variant="h5">
+        Vendor Management
+      </Typography>
       <VendorManagement />
     </>
   );

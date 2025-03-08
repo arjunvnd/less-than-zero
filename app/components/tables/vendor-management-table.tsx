@@ -2,6 +2,7 @@ import { mockVendorData } from "@/app/utils/mocks";
 import {
   Button,
   Paper,
+  Stack,
   Table,
   TableBody,
   TableCell,
@@ -40,12 +41,21 @@ export default function VendorManagementTable() {
                   <VendorChip status={row.status} />
                 </TableCell>
                 <TableCell align="center">
-                  <Button variant="contained" sx={{ mr: 2 }}>
-                    Edit Vendor
-                  </Button>
-                  <Button variant="contained" color="error">
-                    Delete Vendor
-                  </Button>
+                  <Stack direction="row" spacing={2} justifyContent="center">
+                    <Button
+                      variant="contained"
+                      sx={{ mr: 2, whiteSpace: "nowrap" }}
+                    >
+                      Edit Vendor
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="error"
+                      sx={{ whiteSpace: "nowrap" }}
+                    >
+                      Delete Vendor
+                    </Button>
+                  </Stack>
                 </TableCell>
               </TableRow>
             );

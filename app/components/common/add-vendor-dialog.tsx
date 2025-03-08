@@ -26,7 +26,11 @@ const AddVendorDialog = () => {
 
   return (
     <React.Fragment>
-      <Button onClick={handleClickOpen} variant="contained">
+      <Button
+        fullWidth={fullScreen}
+        onClick={handleClickOpen}
+        variant="contained"
+      >
         Add New Vendor
       </Button>
       <Dialog

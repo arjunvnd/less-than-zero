@@ -8,7 +8,12 @@ const VendorManagement = () => {
     <>
       <Grid2 container>
         <Grid2 size={{ xs: 12 }}>
-          <Grid2 container spacing={{ md: 2 }}>
+          <Grid2
+            container
+            spacing={{ xs: 2, md: 2 }}
+            alignItems="center"
+            mb={3}
+          >
             <Grid2
               size={{
                 xs: 12,
@@ -27,7 +32,7 @@ const VendorManagement = () => {
             <Grid2
               size={{
                 xs: 12,
-                sm: 3,
+                md: 3,
               }}
             >
               <TextField
@@ -43,7 +48,6 @@ const VendorManagement = () => {
                     native: true,
                   },
                 }}
-                helperText="Filter by status"
                 variant="filled"
               >
                 <option key="all" value="all">
@@ -60,8 +64,9 @@ const VendorManagement = () => {
             <Grid2
               size={{
                 xs: 12,
-                sm: 3,
+                md: 6,
               }}
+              textAlign="right"
             >
               <AddVendorDialog />
             </Grid2>

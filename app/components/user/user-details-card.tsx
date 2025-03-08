@@ -13,13 +13,13 @@ export default function UserDetailsCard({
   return (
     <>
       <Paper sx={{ width: "100%", p: 4 }}>
-        <Grid2 container>
+        <Grid2 spacing={{ xs: 3, md: 0 }} container>
           <Grid2 size={{ md: 12 }}>
-            <Typography gutterBottom variant="h6">
+            <Typography sx={{ mb: { md: 3 } }} variant="h6">
               User Details
             </Typography>
           </Grid2>
-          <Grid2 size={{ md: 6 }}>
+          <Grid2 size={{ xs: 12, md: 6 }}>
             <Stack spacing={3} direction="column">
               <div>
                 <Typography fontWeight={600}>Name:</Typography>
@@ -35,7 +35,7 @@ export default function UserDetailsCard({
               </div>
             </Stack>
           </Grid2>
-          <Grid2 size={{ md: 6 }}>
+          <Grid2 size={{ xs: 12, md: 6 }}>
             <Stack spacing={3} direction="column">
               <div>
                 <Typography fontWeight={600}>Phone Number:</Typography>
